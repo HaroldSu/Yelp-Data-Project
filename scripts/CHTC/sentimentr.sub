@@ -1,0 +1,25 @@
+# Before running this with "condor_submit sentimentr.sub", the
+# directories log, error, and output must exist.
+
+universe = vanilla
+log    =    log/sentimentr_$(Cluster)_$(Process).log
+error  =  error/sentimentr_$(Cluster)_$(Process).err
+output = output/sentimentr_$(Cluster)_$(Process).out
+
+executable = ./sentimentr.sh
+
+# The argument below is:
+# - key word 
+arguments = $(key)
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/R402.tar.gz, \
+    review_data_match.csv, \
+    sentimentr.R, keyWords.csv
+
+request_cpus = 1
+request_memory = 1GB
+request_disk = 1GB
+
+queue key from keyWords.csv
