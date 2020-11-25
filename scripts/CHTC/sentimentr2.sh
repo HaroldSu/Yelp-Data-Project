@@ -11,5 +11,5 @@ export RHOME=$PWD/R
 export R_LIBS=$PWD/packages
 
 # run your script
-Rscript sentimentr.R $1 # note: the two actual command-line arguments
+Rscript sentimentr2.R $1 # note: the two actual command-line arguments
                          # are in myscript.sub's "arguments = " line
