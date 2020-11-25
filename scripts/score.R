@@ -27,7 +27,7 @@ for(m in 1:length(types)){
     
     score_data <- data %>% 
       group_by(business_id) %>% 
-      summarize(type = "service", key_word = key_word, 
+      summarize(type = type, key_word = key_word, 
                 counts = n(), score = median((stars_adjust + sentiment * 10) / 2))
     if(k == 1){
       data_list[[m]] <- score_data
