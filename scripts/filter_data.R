@@ -20,6 +20,10 @@ business_index_match <- unique(business_index_match) # Indices of business match
 
 business_data_match <- business_data[business_index_match, ]
 dim(business_data_match)[1] # Counts of business matched
+write.csv(business_data_match, "./data/business_data_match.csv", row.names = F)
+
+data_business_name <- business_data_match[,c(1,2)]
+write.csv(data_business_name, "./data/business_data_match_name.csv", row.names = F)
 
 review_data_match <- review_data[which( review_data$business_id %in% business_data_match$business_id), ]
 dim(review_data_match)[1] # Counts of reviews matched

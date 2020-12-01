@@ -6,7 +6,7 @@ if(!require("dplyr")){
 }
 
 data_list <- list()
-types <- c("service", "price", "environment", "food_general", "food_specific")
+types <- c("service", "price", "environment", "food quality", "menu")
 for(m in 1:length(types)){
   type <- types[m]
   all.files <- list.files(path = paste0("./data/type/",type))
@@ -17,9 +17,9 @@ for(m in 1:length(types)){
     data <- read.csv(file = paste0("data/type/",type,"/", key_word, ".csv"))
     for(i in 1:dim(data)[1]){
       if(data$stars[i] == 5){
-        data$stars_adjust[i] <- 5
+        data$stars_adjust[i] <- 1
       }else if(data$stars[i] == 1){
-        data$stars_adjust[i] <- -5
+        data$stars_adjust[i] <- -1
       }else{
         data$stars_adjust[i] <- 0
       }
@@ -46,4 +46,7 @@ for(n in 1:length(data_list)){
   }
 }
 
-write.csv(data_grouped, file = "./data/score.csv", row.names = F)
+data_business_name <- read.csv("./data/business_data_match_name.csv")
+
+data_output <- left_join(data_grouped, data_business_name, by = "business_id")
+write.csv(data_output, file = "./data/score.csv", row.names = F)
