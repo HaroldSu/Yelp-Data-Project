@@ -1,6 +1,8 @@
 library(shiny)
 library(dplyr)
 
+setwd("~/Desktop/STAT628/Yelp-Data-Project")
+
 # Function to output text
 display_text <- function(Business,Type){
   # Read score data
@@ -166,7 +168,13 @@ ui <- fluidPage(
           
         ) # End of mainPanel
       ) # End of sidebarLayout
-    ) # End of Tab 2
+    ), # End of Tab 2
+    
+    # Tab 3: Contact us ----------
+    tabPanel(
+      title = "Contact Us",
+      
+    ) # End of Tab 3
     
   ) # End of navbarPage
   
