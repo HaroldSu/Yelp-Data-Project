@@ -5,8 +5,8 @@ library(shinythemes)
 library(ggplot2)
 
 
-data <- read.csv("score.csv")
-attr <- read.csv("attr_test_result.csv")
+data <- read.csv("data/score.csv")
+attr <- read.csv("data/attr_test_result.csv")
 # Function to output text
 display_text <- function(Business,Type, Key){
   # Index of obs whose name or id matching input

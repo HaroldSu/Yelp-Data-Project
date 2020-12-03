@@ -12,14 +12,15 @@
 
 ## Content: 
 
-### 1.[Data Folder](https://github.com/HaroldSu/Yelp-Data-Project/tree/main/data)
+### 1.[Data](https://github.com/HaroldSu/Yelp-Data-Project/tree/main/data)
+- This project is based on Yelp data provided in STAT 628
+- See [readme](scripts/readme_data.md) for details.
 
-You can explore the raw data and our cleaned data in this folder.
 
+### 2.[Code Scripts](https://github.com/HaroldSu/Yelp-Data-Project/tree/main/scripts)
 
-### 2.[Code Folder](https://github.com/HaroldSu/Yelp-Data-Project/tree/main/code)
-
-All the code for data preprocessing, model selection and model validation are included.
+- **All scripts should be run from the main directory.**
+- See [readme](scripts/readme_scripts.md) for details.
 
 
 ### 4. [Summary File](https://github.com/HaroldSu/Yelp-Data-Project/blob/main/summary.pdf)
