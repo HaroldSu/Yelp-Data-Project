@@ -1,0 +1,5 @@
+## Data
+
+- [type](https://github.com/HaroldSu/Yelp-Data-Project/tree/main/data/type) is a directory containing `.csv` files generating by [sentimentr.R](https://github.com/HaroldSu/Yelp-Data-Project/tree/main/scripts/CHTC/sentimentr.R), with key words as filenames. These file have been grouped by `types`.
+- [score.csv](https://github.com/HaroldSu/Yelp-Data-Project/tree/main/data/score.csv) contains the scores for each `type` and `key_word`, generating by [score.R](https://github.com/HaroldSu/Yelp-Data-Project/tree/main/scripts/score.R) from the `.csv` in [type](https://github.com/HaroldSu/Yelp-Data-Project/tree/main/data/type) directory.
+- [attr_test_result.csv](https://github.com/HaroldSu/Yelp-Data-Project/tree/main/data/score.csv) contains the output by [attributes_analysis.R](https://github.com/HaroldSu/Yelp-Data-Project/tree/main/data/attributes_analysis.R).
