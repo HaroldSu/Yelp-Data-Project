@@ -1,4 +1,5 @@
-# setwd("~/Desktop/STAT628/3Yelp_Data_Project")
+# setwd("~/Desktop/STAT628/Yelp_Data_Project")
+rm(list = ls())
 
 if(!require("dplyr")){
   install.packages("dplyr")
@@ -16,6 +17,8 @@ if(!require("rcompanion")){
   install.packages("rcompanion")
   stopifnot(require("rcompanion"))
 }
+
+source("./scripts/filter_data.R")
 
 business_attributes <- business_data_match$attributes
 n1 <- ncol(business_attributes)
@@ -45,13 +48,13 @@ review_data_match <- review_data_match[o,]
 # review_stars <- review_stars[o,]
 
 
-## Matching each review star with attributes of the restuarant corresponding to the business_id(really really slow:(
+## Matching each review star with attributes of the restaurant corresponding to the business_id
 attr_star_col = c("business_id", "stars", attr_col) 
 mat = matrix(nrow=0,ncol=length(attr_star_col))
 attr_star = as.data.frame(mat)
 colnames(attr_star) = attr_star_col
 t = 1
-for(i in 1:n2){
+for(i in 1:n2){ # really really slow:(
   for(j in t:n3)
     if(business_attributes$business_id[i] == review_data_match$business_id[j]){
       nwrow = c(review_data_match$business_id[j],review_data_match$stars[j],business_attributes[i,-1:-3])
